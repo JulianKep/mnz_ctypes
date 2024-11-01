@@ -34,13 +34,11 @@ rows, cols, value_array_length = image.shape
 # Convert the 3D array to a 1D array in row-major order to make it passable to c function
 image = image.ravel()
 
-print(image)
-
 #create array pointer
 image_ptr = image.ctypes.data_as(ctypes.POINTER(ctypes.c_int))
 
 #call c function
-clibrary.k_means(image_ptr, rows, cols, value_array_length, num_cluster_centers)
+clibrary.k_means(image_ptr, rows, cols, value_array_length, 5)
 
 """ cv2.imshow("Monsterra", image)
 cv2.waitKey(0)
