@@ -11,18 +11,15 @@ img_path = Path(__file__).parent / "monstera-blatt.jpg"
 clibrary = ctypes.CDLL(str(lib_path))
 
 #binary string b because of c argument
+#clibrary examples
 clibrary.display(b"John", 18)
-
-
 print(clibrary.add(4, 5))
-print(clibrary.add(5, 6))
-
-
-
-
-
 
 image = cv2.imread(str(img_path))
+
+
+
+
 
 print(image)
 
